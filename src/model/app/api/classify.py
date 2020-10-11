@@ -11,9 +11,10 @@ from ..classifier import SentimentAnalyzer
 
 log = logging.getLogger(__name__)
 router = APIRouter()
+sa = SentimentAnalyzer()
 
 
-class Item(BaseModel):
+class Data(BaseModel):
     """Use this data model to parse the request body JSON."""
 
     x1: float = Field(..., example=3.14)
@@ -32,7 +33,7 @@ class Item(BaseModel):
 
 
 @router.post('/predict')
-async def predict(item: Item):
+async def predict(item: Data):
     """
     Make random baseline predictions for classification problem 🔮
     ### Request Body
@@ -51,6 +52,6 @@ async def predict(item: Item):
     y_pred = random.choice([True, False])
     y_pred_proba = random.random() / 2 + 0.5
     return {
-        'prediction': y_pred,
+        'sentimentIntensity': y_pred,
         'probability': y_pred_proba
     }
