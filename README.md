@@ -1,2 +1,2 @@
-# kafka-demos
-Demos and learning materials for Apache Kafka.
+# Streaming Sentiment Analysis of 2020 US Elections
+
