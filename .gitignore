@@ -3,6 +3,7 @@
 .vscode/
 # Configs
 etc/*.cfg
+etc/*.json
 # Pyenv
 .python-version
 # Poetry
