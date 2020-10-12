@@ -4,6 +4,7 @@
 # Configs
 etc/*.cfg
 etc/*.json
+*.cfg
 # Pyenv
 .python-version
 # Poetry
