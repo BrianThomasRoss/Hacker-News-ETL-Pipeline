@@ -1,0 +1,30 @@
+{
+  "BrokerNodeGroupInfo": {
+    "BrokerAZDistribution": "DEFAULT",
+    "InstanceType": "kafka.m5.large",
+    "ClientSubnets": [
+      // YOUR SUBNET IDS
+      "",
+      "",
+      ""
+    ],
+    "SecurityGroups": [
+      // VPC SECURITY GROUP ID
+      ""
+    ]
+  },
+
+  "ClusterName": "<YOUR-MSK-CLUSTER-NAME>",
+  "EncryptionInfo": {
+    "EncryptionAtRest": {
+      "DataVolumeKMSKeyId": "<YOUR-CMS-KEY-ID>"
+    },
+    "EncryptionInTransit": {
+      "InCluster": true,
+      "ClientBroker": "TLS"
+    }
+  },
+  "EnhancedMonitoring": "PER_TOPIC_PER_BROKER",
+  "KafkaVersion": "2.2.1",
+  "NumberOfBrokerNodes": 3
+}
