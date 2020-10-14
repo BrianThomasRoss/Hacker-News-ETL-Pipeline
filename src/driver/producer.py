@@ -1,9 +1,7 @@
 # -*- coding:utf-8 -*-
-""""""
+"""Twitter API consumer."""
 import json
-# import requests
 import configparser
-from typing import Dict, List
 
 import pykafka
 from textblob import TextBlob
@@ -12,10 +10,6 @@ from tweepy import OAuthHandler, Stream, StreamListener
 twitter_cfg = configparser.ConfigParser()
 twitter_cfg.read_file(open('twitter.cfg'))
 
-# kafka_cfg = configparser.ConfigParser()
-# kafka_cfg.read_file(open('kafka.cfg'))
-
-# _CONNECTION_STRING = kafka_cfg.get('BOOTSTRAP_SERVERS', 'TLS_CONNECTION_STRING')
 
 
 class TweetListener(StreamListener):
