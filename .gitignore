@@ -5,6 +5,8 @@
 etc/*.cfg
 etc/*.json
 *.cfg
+# Encryption Keys
+*.pem
 # Pyenv
 .python-version
 # Poetry
