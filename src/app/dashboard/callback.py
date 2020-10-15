@@ -39,7 +39,8 @@ def wrap_callbacks(app):
             ))
 
         data = [trace0]
-        layout = dict(title='<b>Most Recent Election Tweets</b>', height=700,
+        layout = dict(title='<b>Most Recent Election Tweets</b>',
+                      height=700,
                       titlefont=dict(size=20))
 
         fig = dict(data=data, layout=layout)

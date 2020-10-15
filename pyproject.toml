@@ -16,6 +16,9 @@ kafka-python = "^2.0.2"
 pykafka = "^2.8.0"
 textblob = "^0.15.3"
 tweepy = "^3.9.0"
+Flask = "^1.1.2"
+dash-bootstrap-components = "^0.10.7"
+ksql = "^0.10.2"
 
 [tool.poetry.dev-dependencies]
 

@@ -16,15 +16,23 @@ class MongoService(object):
         """Return a pandas DataFrame from mongo collection"""
         return pd.DataFrame(list(self._collection.find()))
 
+    def get_latest_tweets(self):
+        return pd.DataFrame(list(self._collection.find().sort([("$natural", -1
+                                                                )]).limit(5)))
+
     @property
     def recent_tweets_data(self):
         """"""
-        df = self.create_tweet_dataframe()
+        df = self.get_latest_tweets()
+
+        df['creation_datetime'] = pd.to_datetime(df['creation_datetime'])
+        df.sort_values(by='creation_datetime', ascending=False, inplace=True)
 
         values = [[date for date in df.head(5)['creation_datetime']],
                   [text for text in df.head(5)['text']],
                   [senti_val for senti_val in df.head(5)['senti_val']],
-                  [subjectivity for subjectivity in df.head(5)['subjectivity']]]
+                  [subjectivity for subjectivity in df.head(5)['subjectivity']]
+                  ]
 
         return values
 

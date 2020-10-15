@@ -16,7 +16,7 @@ layout = html.Div(children=[
         html.Div(
             dcc.Interval(
                 id='interval-component',
-                interval=5 * 1000,  # in milliseconds
+                interval=30 * 1000,  # in milliseconds
                 n_intervals=0
             ))]
         , style={'width': '100%', 'display': 'inline-block'}
